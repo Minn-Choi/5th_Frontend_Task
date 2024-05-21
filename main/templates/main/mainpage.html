@@ -8,25 +8,114 @@
 
 <!-- 코드 작성시, 아래 부분(script 태그 이전)은 전체 삭제하고 작성하세요 -->
 
-<!----------------tip!---------------->
-<!-- 상품 데이터베이스는 프로젝트에 넣어뒀어요 -->
-<!-- 아래와 같은 형식으로 for문을 사용하여 작성하세요 -->
+<div class='page'>
+  <div class='frame1'>
+    <div class='tag'>
+      <div class='frame3'>
+        <a href="/">인기신상랭킹</a>
+        <a>입점특가</a>
+        <a>간편한끼</a>
+        <a>요즘간식</a>
+        <a>주방﹒리빙</a>
+        <a>뷰티</a>
+        <a>패션﹒잡화</a>
+      </div>
+    </div>
 
-<!-- 데이터 사용 예시 -->
-<div style="display: flex">
-  {% for product in products %}
-  <a href="product/{{product.id}}">
-    <img src="{{product.image_url}}" style="width: 100px" />
-    <p>{{product}}</p>
-    <p>{{product.description}}</p>
-    <p>{{product.origin_price}}원</p>
-    <p>{{product.discount_rate}}%</p>
-    <p>{{product.discount_price}}원</p>
-  </a>
-  {% endfor %}
+    <div class='body'>
+      <div class='frame7'>
+        <div class='head'>
+          <a>필터</a>
+          <div class='reset_btn' id="reset_btn">
+            <a class="reset_btn_2">
+              <img class="icon1" src="{% static 'assets/icons/reset.svg' %}"/>
+            </a>
+            <a>초기화</a>
+          </div>
+
+        </div>
+        <div class='cate'>
+          <div class='head2'>
+            <a>카테고리</a>
+            <a class="cate2">
+              <img class="icon-20 icon-color-2" src="{% static 'assets/icons/up.svg' %}"/>
+            </a>
+          </div>
+          <div class='frame8'>
+            <div class='sidebarnav'>
+              <label for='check1'><input type='checkbox' name='check_group' id='check1'/></label>
+                스킨케어.메이크업<a class='min'>68</a>
+            </div>
+            <div class='sidebarnav'>
+              <label for='check2'><input type='checkbox' name='check_group' id='check2'/></label>
+                럭셔리뷰티<a class='min'>40</a>
+            </div>
+            <div class='sidebarnav'>
+              <label for='check3'><input type='checkbox' name='check_group' id='check3'/></label>                
+                간식.과자.떡<a class='min'>28</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='frame10'>
+        <div class='sortingbar'>
+          <a id='total'>총 508건</a>
+          <div class='sortingmenu'>
+            <a>추천순</a>
+            <a>|</a>
+            <a>신상품순</a>
+            <a>|</a>
+            <a>판매량순</a>
+            <a>|</a>
+            <a>혜택순</a>
+            <a>|</a>
+            <a>낮은 가격순</a>
+            <a>|</a>
+            <a>높은 가격순</a>
+          </div>
+        </div>
+        <div class='category' id='category1'style="display:none;">
+          <div class='skin' id='skin1'><a>럭셔리뷰티</a><button class='buty'id='buty'><img class="icon2" src="{% static 'assets/icons/close.svg' %}"/></button></div>
+          <div class='skin' id='skin2'><a>스킨케어 . 메이크업</a><button class='skin' id='skin'><img class="icon2" src="{% static 'assets/icons/close.svg' %}"/></button></div>
+          <div class='skin' id='skin3'><a>간식 . 과자 . 떡</a><button class='snack' id='snack'><img class="icon2" src="{% static 'assets/icons/close.svg' %}"/></button></div>
+        </div>
+        <div class='itemlist'>
+          {% for product in products %}
+          <div class='productcard1'm style="width:249px;">
+            <a href="product/{{product.id}}">
+              <div class='rect1'>
+                <img src="{{product.image_url}}" style="width: 100%" />
+              </div>
+              <div class='frame13_1'>
+                  <img class="icon-20 icon-color-4" src="{% static 'assets/icons/cart.svg' %}"/>
+                <a class="fr13_1_1">담기</a>
+              </div>
+              <div class='frame19'>
+                <div class='frame17'>
+                  샛별배송
+                </div>
+                <div class='frame18'>
+                  {{product.name}}
+                </div>
+                <div class='frame41'>
+                  {{product.description}}
+                </div>
+                <div class='frame16'>
+                  <a class='ab'>{{product.origin_price}}원</a>
+                  <div class='frame15'>
+                    <a class='red'>{{product.discount_rate}}%</a>
+                    <a class='bold'>{{product.discount_price}}원</a>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          {%endfor%}
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-<!-- 데이터 사용 예시 -->
-
 <!-- js 파일 -->
 <script src="{% static 'js/main/main_page.js'%}"></script>
 {% endblock %}
