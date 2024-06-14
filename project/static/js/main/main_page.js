@@ -20,6 +20,7 @@ function resetCategoryCheckboxes() {
     categoryCheckboxes.forEach((checkbox) => {
         checkbox.checked = false;
     });
+    cate.style.display="none";
     total.textContent = "총 508건";
 }
 
@@ -27,14 +28,13 @@ const categoryfilter = () => {
     let total_num = 0;
     if(categoryCheckbox_skin.checked == false && categoryCheckbox_bu.checked == false && categoryCheckbox_bre.checked == false){
         cate.style.display='none';
-        resetButton.style.color = "#dddddd";
-        total.textContent= "총 508건";
+        resetButton.style.color = "#dddddd"; 
+        total.textContent = "총 508건";
     }
     else
     {
         cate.style.display = '';
         resetButton.style.color = "#999999";
-
         if(categoryCheckbox_skin.checked==false){
             sub2.style.display='none';
         }
@@ -56,8 +56,9 @@ const categoryfilter = () => {
             sub3.style.display='';
             total_num += 28;
         }
+        total.textContent = "총 " + total_num + "건";
     }
-    total.textContent = "총 " + total_num + "건";
+    
 }
 
 // button btn_bu  checkbox ckb_hi
