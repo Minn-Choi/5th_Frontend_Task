@@ -65,6 +65,15 @@
         border-radius: 4px;
         background: var(--stroke-stroke-2, #E2E2E2);
         margin-bottom: 12px;
+        color: #FFF;
+text-align: center;
+
+/* Btn */
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
     }
     .word{
         display: flex;
@@ -131,6 +140,15 @@ justify-content: center;
 align-items: center;
 border-radius: 4px;
 border: 1px solid var(--point-main, #5E0080);
+color: var(--point-main, #5E0080);
+text-align: center;
+
+/* Btn */
+font-family: Pretendard;
+font-size: 16px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px; /* 150% */
     }
     .please{
         color: #999;

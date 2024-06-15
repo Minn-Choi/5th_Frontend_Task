@@ -10,9 +10,13 @@
         }
         @media (min-width: 1051px) {
             align-items: center;
-        }
+        } 
     } */
-
+.line2{
+    width: 640px;
+height: 1px;
+background: #E2E2E2;
+}
 .container2{
     display: flex;
     padding-top: 50px;
@@ -80,6 +84,7 @@ align-items: center;
 border-radius: 4px;
 background: var(--stroke-stroke-2, #E2E2E2);
 margin-bottom: 100px;
+margin-top: 32px;
 }
 .id{
     display: flex;
@@ -101,7 +106,7 @@ padding: 10px 20px;
 justify-content: center;
 align-items: flex-start;
 align-self: stretch;
-margin-bottom: 32px;
+margin-bottom: 20px;
 }
 
 .same{
